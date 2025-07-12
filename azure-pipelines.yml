@@ -1,0 +1,117 @@
+trigger:
+  - main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  backendProjectPath: 'SolicitudesApp'
+  frontendProjectPath: 'SolicitudesApp.Frontend'
+  buildConfiguration: 'Release'
+
+stages:
+
+# -------------------------------
+# Etapa 1: Build y Test del Backend
+# -------------------------------
+- stage: Build_Backend
+  displayName: 'Compilar y probar backend'
+  jobs:
+    - job: BuildTestBackend
+      displayName: 'Backend - Build y Test'
+      steps:
+        - task: UseDotNet@2
+          inputs:
+            packageType: 'sdk'
+            version: '8.0.x'
+            installationPath: $(Agent.ToolsDirectory)/dotnet
+
+        - script: dotnet restore
+          workingDirectory: '$(backendProjectPath)'
+          displayName: 'Restaurar paquetes'
+
+        - script: dotnet build --configuration $(buildConfiguration)
+          workingDirectory: '$(backendProjectPath)'
+          displayName: 'Compilar Backend'
+
+        - script: dotnet test --no-build --configuration $(buildConfiguration)
+          workingDirectory: '$(backendProjectPath)'
+          displayName: 'Ejecutar pruebas unitarias'
+
+        - task: ArchiveFiles@2
+          inputs:
+            rootFolderOrFile: '$(backendProjectPath)/SolicitudesApp.API/bin/$(buildConfiguration)/net8.0'
+            includeRootFolder: false
+            archiveType: 'zip'
+            archiveFile: '$(Build.ArtifactStagingDirectory)/backend.zip'
+            replaceExistingArchive: true
+
+        - publish: '$(Build.ArtifactStagingDirectory)/backend.zip'
+          artifact: backend-artifact
+
+# -------------------------------
+# Etapa 2: Build del Frontend
+# -------------------------------
+- stage: Build_Frontend
+  displayName: 'Compilar frontend'
+  dependsOn: Build_Backend
+  jobs:
+    - job: BuildFrontend
+      displayName: 'Frontend - Build'
+      steps:
+        - task: NodeTool@0
+          inputs:
+            versionSpec: '18.x'
+          displayName: 'Instalar Node.js'
+
+        - script: npm install
+          workingDirectory: '$(frontendProjectPath)'
+          displayName: 'Instalar dependencias'
+
+        - script: npm run build -- --configuration=production
+          workingDirectory: '$(frontendProjectPath)'
+          displayName: 'Compilar Angular'
+
+        - task: ArchiveFiles@2
+          inputs:
+            rootFolderOrFile: '$(frontendProjectPath)/dist'
+            includeRootFolder: false
+            archiveType: 'zip'
+            archiveFile: '$(Build.ArtifactStagingDirectory)/frontend.zip'
+            replaceExistingArchive: true
+
+        - publish: '$(Build.ArtifactStagingDirectory)/frontend.zip'
+          artifact: frontend-artifact
+
+# -------------------------------
+# Etapa 3: Despliegue a QA
+# -------------------------------
+- stage: Deploy_QA
+  displayName: 'Desplegar a QA'
+  dependsOn:
+    - Build_Backend
+    - Build_Frontend
+  condition: succeeded()
+  jobs:
+    - job: DeployApp
+      displayName: 'Desplegar aplicación'
+      steps:
+        - download: current
+          artifact: backend-artifact
+
+        - download: current
+          artifact: frontend-artifact
+
+        - task: AzureWebApp@1
+          displayName: 'Desplegar Backend en Azure'
+          inputs:
+            azureSubscription: 'MiConexionAzure'
+            appName: 'mi-backend-qa'
+            package: '$(Pipeline.Workspace)/backend-artifact/backend.zip'
+
+        - task: AzureWebApp@1
+          displayName: 'Desplegar Frontend en Azure'
+          inputs:
+            azureSubscription: 'MiConexionAzure'
+            appName: 'mi-frontend-qa'
+            package: '$(Pipeline.Workspace)/frontend-artifact/frontend.zip'

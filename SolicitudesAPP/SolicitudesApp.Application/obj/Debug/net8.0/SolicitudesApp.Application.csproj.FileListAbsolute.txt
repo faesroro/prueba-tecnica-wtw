@@ -1,0 +1,15 @@
+C:\Users\LENOVO\Documents\Fabian\PruebaWTW\SolicitudesAPP\SolicitudesApp.Application\bin\Debug\net8.0\SolicitudesApp.Application.deps.json
+C:\Users\LENOVO\Documents\Fabian\PruebaWTW\SolicitudesAPP\SolicitudesApp.Application\bin\Debug\net8.0\SolicitudesApp.Application.dll
+C:\Users\LENOVO\Documents\Fabian\PruebaWTW\SolicitudesAPP\SolicitudesApp.Application\bin\Debug\net8.0\SolicitudesApp.Application.pdb
+C:\Users\LENOVO\Documents\Fabian\PruebaWTW\SolicitudesAPP\SolicitudesApp.Application\bin\Debug\net8.0\SolicitudesApp.Domain.dll
+C:\Users\LENOVO\Documents\Fabian\PruebaWTW\SolicitudesAPP\SolicitudesApp.Application\bin\Debug\net8.0\SolicitudesApp.Domain.pdb
+C:\Users\LENOVO\Documents\Fabian\PruebaWTW\SolicitudesAPP\SolicitudesApp.Application\obj\Debug\net8.0\SolicitudesApp.Application.csproj.AssemblyReference.cache
+C:\Users\LENOVO\Documents\Fabian\PruebaWTW\SolicitudesAPP\SolicitudesApp.Application\obj\Debug\net8.0\SolicitudesApp.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LENOVO\Documents\Fabian\PruebaWTW\SolicitudesAPP\SolicitudesApp.Application\obj\Debug\net8.0\SolicitudesApp.Application.AssemblyInfoInputs.cache
+C:\Users\LENOVO\Documents\Fabian\PruebaWTW\SolicitudesAPP\SolicitudesApp.Application\obj\Debug\net8.0\SolicitudesApp.Application.AssemblyInfo.cs
+C:\Users\LENOVO\Documents\Fabian\PruebaWTW\SolicitudesAPP\SolicitudesApp.Application\obj\Debug\net8.0\SolicitudesApp.Application.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\Documents\Fabian\PruebaWTW\SolicitudesAPP\SolicitudesApp.Application\obj\Debug\net8.0\Solicitu.6D7366F5.Up2Date
+C:\Users\LENOVO\Documents\Fabian\PruebaWTW\SolicitudesAPP\SolicitudesApp.Application\obj\Debug\net8.0\SolicitudesApp.Application.dll
+C:\Users\LENOVO\Documents\Fabian\PruebaWTW\SolicitudesAPP\SolicitudesApp.Application\obj\Debug\net8.0\refint\SolicitudesApp.Application.dll
+C:\Users\LENOVO\Documents\Fabian\PruebaWTW\SolicitudesAPP\SolicitudesApp.Application\obj\Debug\net8.0\SolicitudesApp.Application.pdb
+C:\Users\LENOVO\Documents\Fabian\PruebaWTW\SolicitudesAPP\SolicitudesApp.Application\obj\Debug\net8.0\ref\SolicitudesApp.Application.dll

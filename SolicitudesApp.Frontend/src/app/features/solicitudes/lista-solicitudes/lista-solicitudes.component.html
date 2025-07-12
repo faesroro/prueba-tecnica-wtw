@@ -1,0 +1,89 @@
+<div class="container mt-4">
+
+  <div *ngIf="mensaje" class="alert alert-success py-1 px-2 mb-2">
+    {{ mensaje }}
+  </div>
+
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h4 class="mb-0">Solicitudes</h4>
+    <a routerLink="/solicitudes/nueva" class="btn btn-sm btn-primary"><i class="bi bi-plus-circle me-1"></i> Crear Solicitud</a>
+  </div>
+
+  <div class="row g-2 mb-3">
+    <div class="col">
+      <input
+        type="text"
+        class="form-control form-control-sm"
+        placeholder="Tipo"
+        [(ngModel)]="filtroTipo"
+        (input)="aplicarFiltros()"
+      />
+    </div>
+    <div class="col">
+      <select class="form-select" [(ngModel)]="filtroEstado" (change)="aplicarFiltros()">
+        <option *ngFor="let est of estados" [ngValue]="est.valor">{{ est.nombre }}</option>
+      </select>
+    </div>
+    <div class="col">
+      <input
+        type="date"
+        class="form-control form-control-sm"
+        [(ngModel)]="filtroFecha"
+        (change)="aplicarFiltros()"
+      />
+    </div>
+  </div>
+
+  <table class="table table-bordered table-sm align-middle">
+    <thead class="table-light text-center">
+      <tr>
+        <th>ID</th>
+        <th>Tipo</th>
+        <th>Estado</th>
+        <th>Fecha</th>
+        <th>Acción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let solicitud of solicitudes">
+        <td>{{ solicitud.id }}</td>
+        <td>{{ solicitud.tipo }}</td>
+        <td>{{ solicitud.estado }}</td>
+        <td>{{ solicitud.fechaCreacion | date: 'short' }}</td>
+        <td class="text-center">
+          <button class="btn btn-danger btn-sm" (click)="abrirModal(solicitud.id)" title="Eliminar solicitud"> 
+            <i class="bi bi-trash"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p *ngIf="solicitudes.length === 0" class="text-muted">No hay solicitudes para mostrar.</p>
+</div>
+
+<!-- Modal de Confirmación -->
+<div
+  class="modal fade"
+  id="confirmarEliminarModal"
+  tabindex="-1"
+  aria-labelledby="confirmarEliminarModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-danger text-white py-2">
+        <h6 class="modal-title" id="confirmarEliminarModalLabel">¿Eliminar solicitud?</h6>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <p class="mb-1">¿Estás seguro de que deseas eliminar esta solicitud?</p>
+        <small class="text-danger">Esta acción no se puede deshacer.</small>
+      </div>
+      <div class="modal-footer py-2">
+        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-danger btn-sm" (click)="confirmarEliminacion()">Eliminar</button>
+      </div>
+    </div>
+  </div>
+</div>

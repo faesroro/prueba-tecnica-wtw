@@ -1,0 +1,11 @@
+C:\Users\LENOVO\Documents\Fabian\PruebaWTW\SolicitudesAPP\SolicitudesApp.Domain\bin\Debug\net8.0\SolicitudesApp.Domain.deps.json
+C:\Users\LENOVO\Documents\Fabian\PruebaWTW\SolicitudesAPP\SolicitudesApp.Domain\bin\Debug\net8.0\SolicitudesApp.Domain.dll
+C:\Users\LENOVO\Documents\Fabian\PruebaWTW\SolicitudesAPP\SolicitudesApp.Domain\bin\Debug\net8.0\SolicitudesApp.Domain.pdb
+C:\Users\LENOVO\Documents\Fabian\PruebaWTW\SolicitudesAPP\SolicitudesApp.Domain\obj\Debug\net8.0\SolicitudesApp.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LENOVO\Documents\Fabian\PruebaWTW\SolicitudesAPP\SolicitudesApp.Domain\obj\Debug\net8.0\SolicitudesApp.Domain.AssemblyInfoInputs.cache
+C:\Users\LENOVO\Documents\Fabian\PruebaWTW\SolicitudesAPP\SolicitudesApp.Domain\obj\Debug\net8.0\SolicitudesApp.Domain.AssemblyInfo.cs
+C:\Users\LENOVO\Documents\Fabian\PruebaWTW\SolicitudesAPP\SolicitudesApp.Domain\obj\Debug\net8.0\SolicitudesApp.Domain.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\Documents\Fabian\PruebaWTW\SolicitudesAPP\SolicitudesApp.Domain\obj\Debug\net8.0\SolicitudesApp.Domain.dll
+C:\Users\LENOVO\Documents\Fabian\PruebaWTW\SolicitudesAPP\SolicitudesApp.Domain\obj\Debug\net8.0\refint\SolicitudesApp.Domain.dll
+C:\Users\LENOVO\Documents\Fabian\PruebaWTW\SolicitudesAPP\SolicitudesApp.Domain\obj\Debug\net8.0\SolicitudesApp.Domain.pdb
+C:\Users\LENOVO\Documents\Fabian\PruebaWTW\SolicitudesAPP\SolicitudesApp.Domain\obj\Debug\net8.0\ref\SolicitudesApp.Domain.dll

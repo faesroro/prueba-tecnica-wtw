@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "SolicitudesApp.Domain/1.0.0": {
+        "runtime": {
+          "SolicitudesApp.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SolicitudesApp.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
