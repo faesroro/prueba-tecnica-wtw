@@ -52,3 +52,51 @@ CodeCoverage/
 *.VisualState.xml
 TestResult.xml
 nunit-*.xml
+
+# ---> .NET
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.vscode/
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+build/
+[Bb]uild/
+[Bb]in/
+
+# Visual Studio
+.vs/
+.vscode/
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
+
+# Entity Framework
+Migrations/
+
+# Dotnet tools
+.tools/
+
+# ---> Angular
+node_modules/
+dist/
+.angular/
+npm-debug.log
+yarn-error.log
+package-lock.json
+
+# IDEs
+.idea/
+*.log
+
+# Environment files
+.env
+.env.*
